@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Hello chat</title>
+      <link rel="stylesheet" href="tester.css">
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js" defer></script>
+   </head>
+   <body>
+      <nav class="navbar">
+         <div class="logo">Programozási nyelvek</div>
+         <div class="hamburger" id="hamburger">
+            ☰
+         </div>
+         <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="languages.html">Nyelvek</a></li>
+            <li><a href="tips.html">Tippek</a></li>
+            <li><a href="tester.html" class="active">Tesztelés</a></li>
+         </ul>
+      </nav>
+      <main>
+         <h2>Programozási nyelvek kipróbálása</h2>
+         <select id="language" onchange="setTemplate()">
+            <option value="71">Python</option>
+            <option value="63">JavaScript (Node.js)</option>
+            <option value="50">C</option>
+            <option value="54">C++</option>
+            <option value="62">Java</option>
+            <option value="51">C#</option>
+            <option value="60">Go</option>
+            <option value="73">Rust</option>
+            <option value="68">PHP</option>
+         </select>
+         <textarea id="code"></textarea>
+         <br>
+         <button onclick="runCode()">Futtatás</button>
+         <div id="output">Itt jelenik meg a kód...</div>
+      </main>
+      <footer>
+         <p>© 2026 Programozási Nyelvek | Készítette: </p>
+      </footer>
+      <script>
+         const templates = {
+           71: 'print("Hello World")',
+           63: 'console.log("Hello World");',
+           50: '#include <stdio.h>\n\nint main() {\n  printf("Hello World");\n  return 0;\n}',
+           54: '#include <iostream>\nusing namespace std;\n\nint main() {\n  cout << "Hello World";\n  return 0;\n}',
+           62: 'public class Main {\n  public static void main(String[] args) {\n    System.out.println("Hello World");\n  }\n}',
+           51: 'using System;\n\nclass Program {\n  static void Main() {\n    Console.WriteLine("Hello World");\n  }\n}',
+           60: 'package main\nimport "fmt"\n\nfunc main() {\n  fmt.Println("Hello World")\n}',
+           73: 'fn main() {\n  println!("Hello World");\n}',
+           68: '<?php\n echo "Hello World";\n?>'
+         };
+         
+         function setTemplate() {
+           const lang = document.getElementById("language").value;
+           document.getElementById("code").value = templates[lang];
+         }
+         
+         async function runCode() {
+           const code = document.getElementById("code").value;
+           const languageId = document.getElementById("language").value;
+           const outputDiv = document.getElementById("output");
+         
+           outputDiv.innerText = "Futtatás...";
+         
+           try {
+             const response = await fetch("https://ce.judge0.com/submissions?wait=true", {
+               method: "POST",
+               headers: { "Content-Type": "application/json" },
+               body: JSON.stringify({
+                 source_code: code,
+                 language_id: Number(languageId)
+               })
+             });
+         
+             const result = await response.json();
+         
+             if (result.stdout) {
+               outputDiv.innerText = result.stdout;
+             } else if (result.stderr) {
+               outputDiv.innerText = "Runtime hiba:\n" + result.stderr;
+             } else if (result.compile_output) {
+               outputDiv.innerText = "Fordítási hiba:\n" + result.compile_output;
+             } else {
+               outputDiv.innerText = "Nincs kimenet.";
+             }
+         
+           } catch (error) {
+             outputDiv.innerText = "API hiba: " + error.message;
+           }
+         }
+         
+         setTemplate();
+         
+      </script>
+   </body>
+</html>

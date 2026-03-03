@@ -1,11 +1,6 @@
-$("#search-icon").click(function() {
-    $(".nav").toggleClass("search");
-    $(".nav").toggleClass("no-search");
-    $(".search-input").toggleClass("search-active");
-  });
-  
-  $('.menu-toggle').click(function(){
-     $(".nav").toggleClass("mobile-nav");
-     $(this).toggleClass("is-active");
-  });
-  
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+});

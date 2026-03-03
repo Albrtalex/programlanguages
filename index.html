@@ -1,15 +1,102 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A programozási nyelvek</title>
-    <link rel="shortcut icon" href="media/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <h1>A programozási nyelvek világa</h1>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>A programozási nyelvek</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="script.js" defer></script>
+   </head>
+   <body>
+      <!-- NAVBAR -->
+      <nav class="navbar">
+         <div class="logo">Programozási nyelvek</div>
+         <div class="hamburger" id="hamburger">
+            ☰
+         </div>
+         <ul class="nav-links" id="navLinks">
+            <li><a href="index.html" class="active">Főoldal</a></li>
+            <li><a href="languages.html">Nyelvek</a></li>
+            <li><a href="tips.html">Tippek</a></li>
+            <li><a href="tester.html">Tesztelés</a></li>
+         </ul>
+      </nav>
+      <!-- HERO -->
+      <section class="hero">
+         <h1>A programozási nyelvek világa</h1>
+         <p>Fedezd fel a legismertebb programozási nyelveket és tudd meg, melyik mire való!</p>
+         <button onclick="window.location.href='languages.html'">
+         Felfedezés
+         </button>
+      </section>
+      <!-- LANGUAGES -->
+      <section class="languages">
+         <h2>Népszerű nyelvek</h2>
+         <div class="card-container">
+            <div class="card">
+               <h3>Python</h3>
+               <p>Könnyen tanulható, sokoldalú nyelv. Használják webfejlesztésre, AI-ra és adatfeldolgozásra.</p>
+            </div>
+            <div class="card">
+               <h3>JavaScript</h3>
+               <p>A web alapja. Interaktív weboldalak készítéséhez elengedhetetlen.</p>
+            </div>
+            <div class="card">
+               <h3>Java</h3>
+               <p>Stabil, objektumorientált nyelv. Gyakran használják vállalati rendszerekben.</p>
+            </div>
+            <div class="card">
+               <h3>C++</h3>
+               <p>Gyors és hatékony. Játékfejlesztéshez és rendszerszintű programozáshoz ideális.</p>
+            </div>
+         </div>
+      </section>
+      <!-- WHY -->
+      <section class="why">
+         <h2>Miért érdemes programozni tanulni?</h2>
+         <div class="why-container">
+            <div class="why-box">
+               <h3>💼 Magas fizetés</h3>
+               <p>A fejlesztők világszerte keresett szakemberek.</p>
+            </div>
+            <div class="why-box">
+               <h3>🌍 Távoli munka</h3>
+               <p>Otthonról, akár külföldi cégeknek is dolgozhatsz.</p>
+            </div>
+            <div class="why-box">
+               <h3>🧠 Logikus gondolkodás</h3>
+               <p>Fejleszti a problémamegoldó képességet.</p>
+            </div>
+         </div>
+      </section>
+      <!-- STATS -->
+      <section class="stats">
+         <div class="stat">
+            <h3>10M+</h3>
+            <p>Fejlesztő világszerte</p>
+         </div>
+         <div class="stat">
+            <h3>100+</h3>
+            <p>Programozási nyelv</p>
+         </div>
+         <div class="stat">
+            <h3>∞</h3>
+            <p>Lehetőség</p>
+         </div>
+      </section>
+      <!-- TECHNOLOGIES -->
+      <section class="tech">
+         <h2>Ismert programozási nyelvek</h2>
+         <div class="tech-list">
+            <span>JavaScript</span>
+            <span>Python</span>
+            <span>C++</span>
+            <span>Java</span>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <p>© 2026 Programozási Nyelvek | Készítette: </p>
+      </footer>
+   </body>
 </html>
