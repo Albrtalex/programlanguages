@@ -1,0 +1,97 @@
+.tips-hero {
+    text-align: center;
+    padding: 80px 10% 40px;
+}
+
+.tips-hero h1 {
+    font-size: 42px;
+    color: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.tips-container {
+    padding: 40px 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tip-card {
+    background: #1f2937;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    border-right: 4px solid transparent;
+    transition: 0.3s ease;
+}
+
+.tip-card:hover {
+    border-right: 4px solid #3b82f6;
+    background: #263345;
+    transform: scale(1.02);
+}
+
+.tip-number {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(59, 130, 246, 0.3);
+    margin-right: 30px;
+    min-width: 60px;
+}
+
+.tip-content h3 {
+    color: #3b82f6;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.tip-content p {
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.resources {
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.resources h2 {
+    margin-bottom: 30px;
+}
+
+.res-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.res-links a {
+    background: #111827;
+    border: 1px solid #3b82f6;
+    color: #e2e8f0;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s;
+    width: auto; /* Felülírjuk az alap style.css fix szélességét */
+}
+
+.res-links a:hover {
+    background: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+@media (max-width: 768px) {
+    .tip-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .tip-number {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
